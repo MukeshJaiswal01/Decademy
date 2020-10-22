@@ -551,14 +551,20 @@
 	}
 ];
 
-// use the given Provider, e.g in Mist, or instantiate a new websocket provider
-///var web3 = new Web3(Web3.givenProvider);
-	 //var web3 = new Web3(new Web3.providers.HttpProvider())
-
-
-		//new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545'));
-		
-		var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545'));
+                       // use the given Provider, e.g in Mist, or instantiate a new websocket provider
+                       ///var web3 = new Web3(Web3.givenProvider);
+	            //var web3 = new Web3(new Web3.providers.HttpProvi
+	           //new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545'));
+                  //var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545'));
+	  
+	  const ethEnabled = () => {
+                        if (window.ethereum) {
+                        window.web3 = new Web3(window.ethereum);
+                        window.ethereum.enable();
+                        return true;
+                              }
+                          return false;
+                           }
      
 
        const Contract = new web3.eth.Contract(abi, address);
