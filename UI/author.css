@@ -1,0 +1,98 @@
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  body{
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(14,235,192,1) 100%, rgba(22,90,232,1) 100%, rgba(14,132,240,1) 100%, rgba(0,212,255,1) 100%);
+  }
+
+
+  h1{
+    color:white;
+    font-size:60px;
+  }
+  h4{
+
+    float: right;
+    color:black;
+  }
+
+  input{
+
+    margin-left:400px;
+    margin-top:150px;
+    margin-bottom: 70px;
+    width:500px;
+    height: 50px;
+    border-radius: 15px;
+    text-align: center;
+  }
+
+   .btn1 {
+     margin-top:50px;
+    margin-left: 600px;
+    display: block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color:skyblue;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px white;
+    margin-top:-10px;
+    margin-bottom: 25px;}
+  
+   .btn1:hover {background-color:#165ae8; }
+  
+   .btn1:active {
+    background-color: #165ae8;
+    box-shadow: 0 5px white;
+    transform: translateY(4px);
+  }
+
+  

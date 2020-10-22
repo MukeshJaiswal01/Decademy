@@ -1,0 +1,647 @@
+<html>
+<head>
+  <title>Decademy</title>
+  <link rel="stylesheet" href="index3.css"><link>
+  
+
+</head>
+
+
+<body>
+	<h4 id="add">0x70aF29f754988473fcAbA6E01AbfbafF871046d1</h4>
+	<h1>Hello learner</h1>
+	
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		
+		
+			<a id ="m1" target="_blank">My course</a>
+	
+		<a href="#">About</a>		
+		<a href="#">Help</a>
+		<a href="#">Contact</a>
+		<a href="profile.html">Logout</a>
+	  </div>
+	  
+	  <div id="main">
+		<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Profile</span>
+	  </div>
+	  
+	
+
+ <div class="container">
+	 <div class="card">
+		 <div class="imgbx">
+			 <img src="https://i.postimg.cc/cCnmxCKN/e2.jpg" style="width: 300px;">
+		 </div>
+		 <div class="content">
+			 <h2>Ethereum</h2>
+			 <p>Ethereum is a global, open-source platform for decentralized applications.
+				On Ethereum, you can write code that controls digital value, runs exactly 
+				as programmed, and is accessible anywhere in the world.</p>
+			 <p id ="p1"></p>
+		 </div>
+	 </div>
+	 <div class="card">
+		<div class="imgbx">
+			<img src="https://i.postimg.cc/y6Mjfm56/r3.jpg" style="width: 300px;">
+		</div>
+		<div class="content">
+			<h2>R3.Corda</h2>
+			<p>R3’s Corda is an enterprise blockchain platform that delivers privacy, security, 
+			   interoperability and scalability. Corda underpins top-of-stack applications, CorDapps, 
+			   built by ecosystem participants.</p>
+		</div>
+	</div>
+	<div class="card">
+		<div class="imgbx">
+			<img src="https://i.postimg.cc/3rX0T2Nx/hyperledger.png" style="width: 300px">
+		</div>
+		<div class="content">
+			<h2>Hyperledger</h2>
+			<p>Hyperledger is an umbrella project of open source blockchains and related tools, started 
+			   in December 2015 by the Linux Foundation and it support the collaborative development of 
+			   blockchain-based distributed ledgers</p>
+		</div>
+	</div>
+ </div>  
+	
+	<div class="container2">
+		<div class ="bt1">
+			
+			<button class="btn1">Buy course
+				 </button>
+			
+		</div>
+		<div class ="bt1">
+			<button class="btn2">Buy course</button>
+			
+		</div>
+		<div class ="bt1">
+			<button class ="btn3">Buy course</button>
+			
+		</div>
+	</div>
+  
+
+  
+  
+  
+
+
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
+		
+	<script type="text/javascript" src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
+	<script type="text/javascript" src ="btn.js"></script>
+  <script>
+	
+  $(document).ready( async function (){
+
+     const address = "0x243627dA29B11375ba7B51b6C9Ede63783d7A8cc";
+	 const abi = [
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "approved",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Approval",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "approved",
+				"type": "bool"
+			}
+		],
+		"name": "ApprovalForAll",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "approve",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_tokenURI",
+				"type": "string"
+			}
+		],
+		"name": "buyItem",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "safeTransferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes",
+				"name": "_data",
+				"type": "bytes"
+			}
+		],
+		"name": "safeTransferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "approved",
+				"type": "bool"
+			}
+		],
+		"name": "setApprovalForAll",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "transferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "baseURI",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getApproved",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "id_to_url",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			}
+		],
+		"name": "isApprovedForAll",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "ownerOf",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes4",
+				"name": "interfaceId",
+				"type": "bytes4"
+			}
+		],
+		"name": "supportsInterface",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "symbol",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenByIndex",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenOfOwnerByIndex",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenURI",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "URl",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+
+// use the given Provider, e.g in Mist, or instantiate a new websocket provider
+///var web3 = new Web3(Web3.givenProvider);
+	 //var web3 = new Web3(new Web3.providers.HttpProvider())
+
+
+		//new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545'));
+		
+		var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545'));
+     
+
+       const Contract = new web3.eth.Contract(abi, address);
+	   console.log(Contract);
+	    const acc = await web3.eth.getAccounts();
+	   console.log(acc);
+	   
+
+	   let totalSupply = await Contract.methods.totalSupply().call();
+	   console.log(totalSupply)
+	  // const buyitem = await Contract.methods.buyItem("nnn").send({from: acc[0], gas:3000000, value: 30000});
+	    //buyItem();
+		let i;
+		let u = [];
+		for(i = 1; i<= totalSupply; i++){
+		    u[i] = await Contract.methods.id_to_url(i).call();
+		   console.log(u[i]);
+		}
+
+		 let giants = u;
+		
+/* const container = document.getElementById('items');
+u.forEach(function(i) {
+    container.innerHTML += ('<div>' + i + '</div>');
+});
+
+*/
+
+	 
+	  // const x = await Contract.methods.id_to_url(4).call();
+	
+   $(".btn1").click(async function(){
+	const buyitem = await Contract.methods.buyItem("866").send({from:acc[0], gas:3000000, value:30000 });   
+	 if(buyitem != null){
+		 console.log(buyitem)
+		 let tr = buyitem.transactionHash;
+		 $("#m1").attr("href","https://siasky.net/CACqf4NlIMlA0CCCieYGjpViPGyfyJ4v1x3bmuCKZX8FKA");
+		 alert("Transaction successfull, check your profile for the course and your trnxid is :-" + tr);
+		 
+
+	 }
+
+	 else{
+		 alert("transaction failed");
+	 }
+});
+	
+
+	
+  });
+
+
+
+
+
+
+
+		
+		
+		
+
+
+
+
+    
+	   
+    
+
+
+
+      
+        
+         
+         
+         
+
+        
+
+
+
+    
+   
+  </script>
+</body>
+
+</html>

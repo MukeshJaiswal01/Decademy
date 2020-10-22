@@ -1,0 +1,224 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: "poppins";
+}
+
+
+
+body{
+    
+    
+    background-image: linear-gradient( 109.6deg,  rgba(48,207,208,1) 11.2%, rgba(51,8,103,1) 92.5%);
+
+}
+
+h1{
+color:whitesmoke;
+ font-size: 70px;
+ margin-bottom:50px;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+.container{
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    left: 90px;
+    
+
+}
+.container .card{
+    position: relative ;
+    max-width: 300px;
+    height: -420px;
+    background:whitesmoke;
+    margin:30px 15px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction:column;
+    box-shadow: 0 5px rgba(0,0,0,0.5);
+    transition:0.3s ease-in-out;
+    
+}
+
+.container .card:hover{
+    height: 420px;
+}
+
+.container .card .imgbx{
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 20px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.container .card .imgbx img{
+    max-width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    z-index: -4;
+}
+
+.container .card .content{
+    position: relative;
+    margin-top: -140px;
+    padding:10px 15px;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    color:#3f3fc9;
+}
+.container .card:hover .content{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
+}
+
+.container2{
+    display: flex;
+    left:300px;
+}
+
+
+.container2 .bt1{
+
+margin-left:210px;
+    
+    
+
+}
+
+.container2 .bt1 .btn1 {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color:skyblue;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px white;
+    margin-top:-10px;
+    margin-bottom: 25px;}
+  
+  .container2 .bt1 .btn1:hover {background-color:#165ae8; }
+  
+  .container2 .bt1 .btn1:active {
+    background-color: #165ae8;
+    box-shadow: 0 5px white;
+    transform: translateY(4px);
+  }
+  .container2 .bt1 .btn2 {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color:skyblue;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px white;
+    margin-top:-10px;
+    margin-bottom: 25px;}
+  
+  .container2 .bt1 .btn2:hover {background-color:#165ae8; }
+  
+  .container2 .bt1 .btn2:active {
+    background-color: #165ae8;
+    box-shadow: 0 5px white;
+    transform: translateY(4px);
+  }
+  .container2 .bt1 .btn3 {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color:skyblue;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px white;
+    margin-top:-10px;
+    margin-bottom: 25px;}
+  
+  .container2 .bt1 .btn3:hover {background-color:#165ae8; }
+  
+  .container2 .bt1 .btn3:active {
+    background-color: #165ae8;
+    box-shadow: 0 5px white;
+    transform: translateY(4px);
+  }
+
+  #p1{
+  margin-left: -50px;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bolder;
+      
+  }
+  h4{
+    float: right;
+  }
+
+ 

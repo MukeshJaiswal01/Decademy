@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <body>
+       <h1>hi there</h1>
+        <p id ="hello"></p>
+    
+        <script type="text/javascript" src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/web3@0.20.5/dist/web3.min.js"></script>
+        
+        <script>
+        
+            $(document).ready( async function (){
+            
+                var address = "0x1a76f58204FE6149d57Cd65c5Dd202a69a726DfF";
+                var abi =  [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "hello",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ];
+        
+             const web3 = Web3(new Web3.providers.HttpProvider("http://127.0.0.1:9545"))
+             contract = new web3.eth.contract(abi, address);
+             var acc = await web3.eth.getAccounts();
+             console.log(acc);
+             contract.methods.hello().call.then(function(bal){
+                    $('#hello').html(bal);
+                })
+             
+             
+   
+            
+
+
+
+            });
+
+
+        </script>
+    </body>
+</html>
